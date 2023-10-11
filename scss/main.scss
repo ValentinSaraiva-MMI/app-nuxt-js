@@ -1,0 +1,8 @@
+@import "./foundations/reset";
+@import "./foundations/variables";
+
+ body {
+    font-family: $primary-font-familly;
+    font-size: $medium-font-size;
+    line-height: 1,2;
+ }
