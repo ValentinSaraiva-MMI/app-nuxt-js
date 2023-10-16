@@ -1,13 +1,15 @@
 <template>
   <main class="layout">
-    <header class="layout__header"></header>
+    <article>
+      <Header />
+    </article>
     <aside class="layout__aside">
       <slot name="aside"></slot>
     </aside>
     <article class="layout__article">
       <NuxtPage />
     </article>
-    <article class="">
+    <article>
       <Footer />
     </article>
   </main>
