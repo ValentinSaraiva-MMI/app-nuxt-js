@@ -1,5 +1,7 @@
 <template>
   <nav class="navbar">
+    <div @click="store.increment()">{{ store.cart }}</div>
+
     <div class="topnav">
       <div>
         <img src="public/image/logo.png" alt="logo de la page" />
@@ -94,4 +96,9 @@
 }
 </style>
 
-<script setup></script>
+<script setup>
+import { useGlobalStore } from "@/stores/global";
+
+const store = useGlobalStore();
+console.log(store);
+</script>

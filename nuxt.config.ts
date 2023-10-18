@@ -10,7 +10,10 @@ components:[ {
   pathPrefix:false
 }],
 
-modules: ['@nuxtjs/prismic'],
+modules: [
+'@nuxtjs/prismic',
+'@pinia/nuxt'
+],
 
  prismic: { endpoint: process.env.NUXT_PRISMIC_ENDPOINT },
 

@@ -2,8 +2,8 @@
   <!-- <p>{{ home.data.information }}</p> -->
 
   <div class="p-index">
-    <!-- <p>tesssst</p>
-    <p>{{ recipes }}</p> -->
+    <p>tesssst</p>
+    <p>{{ recettes }}</p>
 
     <!-- <h1>{{ home.data.hero_title }}</h1> -->
   </div>
@@ -25,6 +25,19 @@
     }"
   />
 
+  <div class="p-index__recipes">
+    <div class="p-index__recipe" v-for="recette in recettes">
+      <RecipeCard
+        v-bind="{
+          id: recette.recipe_id,
+          title: recette.recipe_name,
+          description: recette.recipe_description,
+          image: recette.image_url,
+        }"
+      />
+    </div>
+  </div>
+
   <MyCards></MyCards>
 </template>
 
@@ -36,7 +49,11 @@ const { data: home, error } = await useAsyncData("home", () =>
   client.getSingle("homepage")
 );
 
-// const data {data:recipes} = await
+const env = useRuntimeConfig();
+
+const { data: recettes } = await useAsyncData("recettes", async () => {
+  return $fetch(env.public.apiUrl + "/recipes");
+});
 
 console.log(home.data);
 
