@@ -2,8 +2,8 @@
   <!-- <p>{{ home.data.information }}</p> -->
 
   <div class="p-index">
-    <p>tesssst</p>
-    <p>{{ recettes }}</p>
+    <!-- <p>tesssst</p>
+    <p>{{ recettes }}</p> -->
 
     <!-- <h1>{{ home.data.hero_title }}</h1> -->
   </div>

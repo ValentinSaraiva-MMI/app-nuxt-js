@@ -1,5 +1,5 @@
 <template>
-  <h1>
+  <h1 class="p-error__title">
     ERROR <span>{{ error.statusCode }}</span>
   </h1>
 
@@ -16,9 +16,11 @@
 </template>
 
 <style lang="scss">
-h1 {
-  font-size: 35px;
-  text-align: center;
+.p-error {
+  &__title {
+    font-size: 35px;
+    text-align: center;
+  }
 }
 </style>
 

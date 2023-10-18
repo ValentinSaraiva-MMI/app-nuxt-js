@@ -62,7 +62,7 @@ const isVideoButton = computed(() => {
   }
 
   &.-video {
-    background: rgb(170, 1, 1);
+    background: $white;
     box-shadow: none;
     color: black;
   }
