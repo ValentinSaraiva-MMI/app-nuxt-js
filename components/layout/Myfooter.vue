@@ -1,6 +1,6 @@
 <template>
 
-<div> 
+<div class="footer"> 
 
 
 <FooterMenu v-for="menu in menus" v-bind="menu"/>
@@ -14,95 +14,14 @@
 </template>
 
 <style lang="scss" scoped>
-.topnav {
-  overflow: hidden;
-
-
-.header__liste{
-    @include h5;
-    display: flex;
-  
-    justify-content: center;
-    gap: 5%;
-    text-transform: capitalize;
-    align-items: center;
-    text-transform: none;
-
-    
+.footer {
+  display: flex;
+  width: 100vw;
+  justify-content: space-evenly;
+  background-color: #FAFAFF;
+  padding: 57px 0;
 }
 
-
-
-
-
-}
-
-
-
-.topnav a {
-  color: black;
-  text-decoration: none;
-}
-
-.topnav img {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav .search-container {
-  float: right;
-}
-
-.topnav input[type="text"] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: none;
-}
-
-.topnav .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-.topnav .search-container button:hover {
-  background: #ccc;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav .search-container {
-    float: none;
-  }
-  .topnav a,
-  .topnav input[type="text"],
-  .topnav .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .topnav input[type="text"] {
-    border: 1px solid #ccc;
-  }
-}
 </style>
 
 <script setup>
