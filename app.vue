@@ -6,8 +6,10 @@
 </template>
 
 <script setup>
-onMounted(() => {
-  const cart = localStorage.getItem("cart");
-  store.SetCart(JSON.parse(cart));
-});
+
+
+// onMounted(() => {
+//   const cart = localStorage.getItem("cart");
+//   store.SetCart(JSON.parse(cart));
+// });
 </script>
