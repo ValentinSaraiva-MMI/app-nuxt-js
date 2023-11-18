@@ -48,6 +48,11 @@
   <MyServiceCard :services="home.data.services"/>
   
  
+  <Newslater 
+   :title="home.data.newsletter_title"
+   :text="home.data.newsletter_description"
+   :img="home.data.newsletter_image"
+  />
 
   <!-- <MyCards></MyCards> -->
 </template>
