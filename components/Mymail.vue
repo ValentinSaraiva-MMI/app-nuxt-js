@@ -1,8 +1,8 @@
 <template>
   <div class="email" :class="className">
     <input class="email__input" type="email" placeholder="Enter your email..." />
-    <myIcon v-if="size == 'small'" name="chevron" size="medium" bg="orange-blanc" />
-    <myButton v-if="size == 'big'" size="big" class="email__button">subcribe</myButton>
+    <myIcon v-if="size == 'small'"  direction="reverse"  name="chevron"  color="primary" />
+    <myButton v-if="size == 'big'"    size="big" class="email__button">subcribe</myButton>
   </div>
 </template>
 
@@ -16,7 +16,7 @@
   background: $white;
   
   &.-small{
-      padding: 8px 10px;
+      padding: 8px 10px; 
       border-radius: 32.5px;
       box-shadow: 0 0 15px rgba($gray, 30%);
 
