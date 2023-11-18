@@ -2,13 +2,15 @@
   <!-- <p>{{ home.data.information }}</p> -->
 
   <div class="p-index">
-    <!-- <p>tesssst</p>
-    <p>{{ recettes }}</p> -->
+ 
+    
+    <!-- <p>{{ recettes }}</p>  -->
 
     <!-- <h1>{{ home.data.hero_title }}</h1> -->
   </div>
-  <!-- 
-  <PrismicRichText :field="home.data.hero_title" /> -->
+  
+  <!-- <PrismicRichText :field="home.data.hero_title" /> -->
+
   <Hero
     :title="home.data.hero_title"
     :text="home.data.hero_text"
@@ -19,7 +21,7 @@
 
   <Howto
     v-bind="{
-      tag: 'How to',
+      tag: 'How to work ',
       title: 'Food Us An Important Part Of A Balanced Diet ',
       items: home.data.how_to,
     }"
@@ -38,10 +40,30 @@
     </div>
   </div>
 
-  <MyCards></MyCards>
+ 
+  <MyServiceCard
+  
+  :services="home.data.services"
+  
+  />
+  
+ 
+
+  <!-- <MyCards></MyCards> -->
 </template>
 
-<style></style>
+<style>
+
+
+.p-index__recipes {
+
+display: grid;
+grid-template-columns: repeat(3,minmax(0,1fr));
+gap: 60px;
+
+}
+
+</style>
 
 <script setup>
 const { client } = usePrismic();
@@ -72,7 +94,7 @@ useSeoMeta({
   ogImage: home.value.data.meta_image,
 });
 
-console.log(home);
+console.log(home.value.data.services);
 
 import MyCard from "@/components/MyCard.vue";
 
