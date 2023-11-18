@@ -55,7 +55,7 @@ const { data: recettes } = await useAsyncData("recettes", async () => {
   return $fetch(env.public.apiUrl + "/recipes");
 });
 
-console.log(home.data);
+// console.log(home.data);
 
 if (!home.value || error.value) {
   throw createError({

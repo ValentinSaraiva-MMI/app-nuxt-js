@@ -12,10 +12,23 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/prismic": "^3.0.3",
+    "@nuxtjs/storybook": "^7.0.0",
     "nuxt": "^3.7.4",
     "sass": "^1.69.2",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "7.5.0-alpha.3",
+    "@types/node": "^18.17.5",
+    "@storybook/vue3": "7.5.0-alpha.3",
+    "@storybook-vue/nuxt": "0.1.7",
+    "@storybook/addon-links": "7.5.0-alpha.3",
+    "@storybook/builder-vite": "7.5.0-alpha.3",
+    "@storybook/addon-essentials": "7.5.0-alpha.3",
+    "@storybook/addon-interactions": "7.5.0-alpha.3",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/blocks": "7.5.0-alpha.3"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",

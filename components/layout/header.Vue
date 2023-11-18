@@ -4,12 +4,18 @@
 
     <div class="topnav">
       <div>
-        <img src="public/image/logo.png" alt="logo de la page" />
+        <img src="@/public/image/logo.png" alt="logo de la page" />
       </div>
-      <a href="#">Home</a>
+<nav>
+<ul>
+ <li class="header__item" v-for="link in links" :key="link"><a :href="link[1]">{{ link[0] }}</a></li>
+</ul>
+</nav>
+
+      <!-- <a href="#">Home</a>
       <a href="#">Menu</a>
       <a href="#">Service</a>
-      <a href="#">Shop</a>
+      <a href="#">Shop</a> -->
       <div class="search-container">
         <form action="/action_page.php">
           <input type="text" placeholder="Search" name="search" />
@@ -27,7 +33,7 @@
 
 .topnav a {
   float: left;
-  display: block;
+  display: flex;
   color: black;
   text-align: center;
   padding: 14px 16px;
@@ -101,4 +107,14 @@ import { useGlobalStore } from "@/stores/global";
 
 const store = useGlobalStore();
 console.log(store);
+
+
+const links = 
+  [["home", "/"],
+  ["menu", "/"],
+  ["service", "/"],
+  ["shop", "/"],
+]
+
+
 </script>
