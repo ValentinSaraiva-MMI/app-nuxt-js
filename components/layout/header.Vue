@@ -4,18 +4,26 @@
 
     <div class="topnav">
       <div>
-        <img src="public/image/logo.png" alt="logo de la page" />
+        <img src="@/public/image/logo.png" alt="logo de la page" />
       </div>
-      <a href="#">Home</a>
-      <a href="#">Menu</a>
-      <a href="#">Service</a>
-      <a href="#">Shop</a>
+    <nav class="header__nav">
+      <ul class="header__liste">
+        <li class="header__item" v-for="link in links" :key="link"><a :href="link[1]">{{ link[0] }}</a></li>
+      </ul>
+    </nav>
+
       <div class="search-container">
         <form action="/action_page.php">
           <input type="text" placeholder="Search" name="search" />
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
+
+
+
+
+
+      
     </div>
   </nav>
 </template>
@@ -23,16 +31,32 @@
 <style lang="scss" scoped>
 .topnav {
   overflow: hidden;
+
+
+.header__liste{
+    @include h5;
+    display: flex;
+  
+    justify-content: center;
+    gap: 5%;
+    text-transform: capitalize;
+    align-items: center;
+    text-transform: none;
+
+    
 }
 
+
+
+
+
+}
+
+
+
 .topnav a {
-  float: left;
-  display: block;
   color: black;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
 }
 
 .topnav img {
@@ -101,4 +125,14 @@ import { useGlobalStore } from "@/stores/global";
 
 const store = useGlobalStore();
 console.log(store);
+
+
+const links = 
+  [["home", "/"],
+  ["menu", "/"],
+  ["service", "/"],
+  ["shop", "/"],
+]
+
+
 </script>

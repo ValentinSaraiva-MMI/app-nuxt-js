@@ -2,13 +2,15 @@
   <!-- <p>{{ home.data.information }}</p> -->
 
   <div class="p-index">
-    <!-- <p>tesssst</p>
-    <p>{{ recettes }}</p> -->
+ 
+    
+    <!-- <p>{{ recettes }}</p>  -->
 
     <!-- <h1>{{ home.data.hero_title }}</h1> -->
   </div>
-  <!-- 
-  <PrismicRichText :field="home.data.hero_title" /> -->
+  
+  <!-- <PrismicRichText :field="home.data.hero_title" /> -->
+
   <Hero
     :title="home.data.hero_title"
     :text="home.data.hero_text"
@@ -19,11 +21,12 @@
 
   <Howto
     v-bind="{
-      tag: 'How to',
+      tag: 'How to work ',
       title: 'Food Us An Important Part Of A Balanced Diet ',
       items: home.data.how_to,
     }"
   />
+
 
   <div class="p-index__recipes">
     <div class="p-index__recipe" v-for="recette in recettes">
@@ -38,10 +41,43 @@
     </div>
   </div>
 
-  <MyCards></MyCards>
+ 
+
+  <p class="title_base">services</p>
+  <h3 class="title_h3">Why Choose our Favorite Food</h3>
+  <MyServiceCard :services="home.data.services"/>
+  
+ 
+
+  <!-- <MyCards></MyCards> -->
 </template>
 
-<style></style>
+<style lang="scss" >
+
+.title_base {
+  text-align: center;
+  color: $primary-color;
+  text-transform: capitalize;
+}
+
+.title_h3{
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 60px;
+  margin-top: 5px;
+}
+
+
+
+.p-index__recipes {
+
+display: grid;
+grid-template-columns: repeat(3,minmax(0,1fr));
+gap: 60px;
+
+}
+
+</style>
 
 <script setup>
 const { client } = usePrismic();
@@ -55,7 +91,7 @@ const { data: recettes } = await useAsyncData("recettes", async () => {
   return $fetch(env.public.apiUrl + "/recipes");
 });
 
-console.log(home.data);
+// console.log(home.data);
 
 if (!home.value || error.value) {
   throw createError({
@@ -72,7 +108,7 @@ useSeoMeta({
   ogImage: home.value.data.meta_image,
 });
 
-console.log(home);
+console.log(home.value.data.services);
 
 import MyCard from "@/components/MyCard.vue";
 

@@ -1,48 +1,64 @@
 <template>
-  <div class="card">
-    <div class="card__column">
+<div class="grid">
+
+
+
+  <div  v-for="item in services" class="card">
+   
       <div class="card__icone">
-        <!--  <MyIcon name="play" size="big" /> -->
+      
 
-        <MyIcon :direction="iconDirection" :name="iconName" :color="iconColor" :size="iconSize" />
+        <MyIcon :name="item.services_icon" color="secondary" size="big" />
       </div>
 
-      <div class="card__title">
-        <MyTitle h4="h4" variant="h4">
-          {{ title }}
-        </MyTitle>
-      </div>
+      
+       <PrismicText class="h4" :field="item.services_title" />
+       
 
       <div class="card__description">
-        <MyTitle h5="h5" variant="p1">
-          {{ description }}
-        </MyTitle>
+       
+         <PrismicRichText :field="item.services_description" />
+    
       </div>
-    </div>
+  
+  </div>
+
   </div>
 </template>
 
 <style lang="scss" scoped>
+
+.grid {
+  padding:0 150px;
+  display: grid;
+  justify-items: center;
+  align-items: stretch;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 50px;
+ 
+
+  > :nth-child(2n-1){
+    border: 1px solid $gray;
+  }
+
+  > :nth-child(2n){
+    box-shadow: 0 0 20px rgba($gray, 50%);
+  }
+} 
+
 .card {
-  width: 485px;
-  height: 485px;
+  max-width: 485px;
+  height: auto;
   border-radius: 35px;
-  border: 1px solid $gray;
   display: flex;
+  padding: 100px 50px;
   align-items: center;
   justify-content: center;
-
-  &__column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 42px;
-  }
-
-  &__description {
-    text-align: center;
-  }
+  flex-direction: column;
+  gap: 42px;
+  text-align: center;
+  background-color: $white;
 }
 </style>
 
@@ -51,11 +67,14 @@ import MyTitle from './elements/MyTitle.vue'
 import MyIcon from '../components/elements/MyIcon.vue'
 
 defineProps({
-  title: String,
-  description: String,
-  iconName: String,
-  iconSize: String,
-  iconColor: String,
-  iconDirection: String
+
+services: Array,
+
+
 })
+
+
+
+
+
 </script>

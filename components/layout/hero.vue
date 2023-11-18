@@ -1,7 +1,7 @@
 <template>
   <section class="c-hero">
     <div class="c-hero__column">
-      <div>
+      <div class="c-hero__introducing">
         <div class="c-hero__title">
           <PrismicRichText :field="title" />
         </div>
@@ -45,6 +45,10 @@
 
 <style lang="scss">
 .c-hero {
+  &__introducing {
+    margin-left: 4vw;
+  }
+
   &__buttons {
     display: flex;
     flex-flow: row wrap;
@@ -56,7 +60,7 @@
 
   &__column {
     display: grid;
-    grid-template-columns: 42.8% 40.6%;
+    grid-template-columns: 45% auto;
     gap: 10%;
   }
 
@@ -71,6 +75,8 @@
   }
 
   &__text {
+    margin-top: 2.5vw;
+    color: $black;
     font-size: $regular-font-size;
     font-weight: 500;
   }

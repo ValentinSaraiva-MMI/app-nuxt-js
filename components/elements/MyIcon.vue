@@ -132,7 +132,7 @@ const getIcon = computed(() => {
 })
 
 const className = computed(() => ({
-  ' -big': props.size === 'big',
+  '-big': props.size === 'big',
   '-primary': props.color === 'primary',
   '-secondary': props.color === 'secondary',
   '-dark': props.color === 'dark',

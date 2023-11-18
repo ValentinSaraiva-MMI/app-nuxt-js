@@ -4,9 +4,9 @@
       {{ tag }}
     </span>
 
-    <h2 class="c-how-to__title">
+    <h3 class="c-how-to__title">
       {{ title }}
-    </h2>
+    </h3>
 
     <div class="c-how-to__list">
       <div
@@ -25,6 +25,11 @@
 
 <style lang="scss">
 .c-how-to {
+
+  &__title {
+    text-align: center;
+  }
+
   &__list {
     display: flex;
     flex-direction: row;
