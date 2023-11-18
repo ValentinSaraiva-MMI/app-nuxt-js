@@ -27,6 +27,7 @@
     }"
   />
 
+
   <div class="p-index__recipes">
     <div class="p-index__recipe" v-for="recette in recettes">
       <RecipeCard
@@ -41,18 +42,31 @@
   </div>
 
  
-  <MyServiceCard
-  
-  :services="home.data.services"
-  
-  />
+
+  <p class="title_base">services</p>
+  <h3 class="title_h3">Why Choose our Favorite Food</h3>
+  <MyServiceCard :services="home.data.services"/>
   
  
 
   <!-- <MyCards></MyCards> -->
 </template>
 
-<style>
+<style lang="scss" >
+
+.title_base {
+  text-align: center;
+  color: $primary-color;
+  text-transform: capitalize;
+}
+
+.title_h3{
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 60px;
+  margin-top: 5px;
+}
+
 
 
 .p-index__recipes {

@@ -29,13 +29,14 @@
 <style lang="scss" scoped>
 
 .grid {
-  padding: 150px;
+  padding:0 150px;
   display: grid;
   justify-items: center;
   align-items: stretch;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 50px;
+ 
 
   > :nth-child(2n-1){
     border: 1px solid $gray;
