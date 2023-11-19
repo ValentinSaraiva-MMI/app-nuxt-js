@@ -44,6 +44,7 @@
   <MyServiceCard :services="home.data.services"/>
 
 
+ 
     <Howto
     v-bind="{
       tag: 'How to work ',
