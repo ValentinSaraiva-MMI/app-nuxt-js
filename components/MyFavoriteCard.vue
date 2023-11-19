@@ -18,8 +18,8 @@
       </div>
 
       <div>
-        <MyTitle class="card__span--couleur" h5="h5" variant="h5"> {{ monnaie }} </MyTitle>
-        <MyTitle class="card__span" h5="h5" variant="h5"> {{ prix }} </MyTitle>
+        <MyTitle class="card__span--couleur" h5="h5" variant="h5"> $ </MyTitle>
+        <MyTitle class="card__span" h5="h5" variant="h5"> 5.15 </MyTitle>
       </div>
 
       <div class="card__icon">
@@ -79,12 +79,7 @@ import MyIcon from '../components/elements/MyIcon.vue'
 defineProps({
   title: String,
   description: String,
-  prix: String,
   imagesrc: String,
-  imagealt: String,
-  monnaie: String,
-  iconName: String,
-  iconSize: String,
-  iconDirection: String
+  imagealt: String
 })
 </script>

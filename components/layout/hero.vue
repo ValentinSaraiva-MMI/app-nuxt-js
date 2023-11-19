@@ -37,7 +37,14 @@
       </div>
 
       <div class="c-hero__cards">
-        <p>testd</p>
+
+<div class="c-hero__cards__bg"></div>
+
+ <ul class="c-hero__cards__grid">
+  <li v-for="recette in gridRepasFavoris">
+    <MyFavoriteCard :title="recette.recipe_name" :description="recette.recipe_description" :imagesrc="recette.image_url"/>
+  </li>
+ </ul>
       </div>
     </div>
   </section>
@@ -61,7 +68,7 @@
   &__column {
     display: grid;
     grid-template-columns: 45% auto;
-    gap: 10%;
+    gap: 20%;
   }
 
   &__title {
@@ -82,8 +89,40 @@
   }
 
   &__cards {
-    background-color: blue;
+
+position: relative;
+
+width: 550px;
+height: 774px;
+
+
+   
+    &__bg {
+       background: linear-gradient(25deg, transparent, rgba($gray, 50%));
+       width: 70%;
+       height: 100%;
+       border-radius: 30px;
+       position: absolute;
+       top: 0;
+       right: 0;
+       z-index: -800;
+    }
+    
+
+&__grid {
+    display: grid;
+ margin-top: 60px;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 50px 10px;
+    width: 546px;
+    height: 700px;
+   
+  
+}
+
   }
+
+
 }
 </style>
 
@@ -98,7 +137,17 @@ const env = useRuntimeConfig();
 
 // console.log(env);
 
-// const { data: recipes } = await useAsyncData("recipes", async () => {
-//   return $fetch(env.public.apiUrl + "/recipes");
-// });
+const { data: recipes } = await useAsyncData("recipes", async () => {
+  return $fetch(env.public.apiUrl + "/recipes");
+});
+
+
+const gridRepasFavoris = computed(() => {
+  if (recipes.value){
+    return recipes.value.slice(0, 4)
+  } else{
+    return []
+  }
+})
+
 </script>
