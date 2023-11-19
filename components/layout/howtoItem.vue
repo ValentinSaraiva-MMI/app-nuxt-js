@@ -17,7 +17,7 @@
     font-size: $medium-font-size;
   }
 
-  &__texte {
+  &__texte { 
     font-family: $primary-font-familly;
     font-size: $regular-font-size;
   }
