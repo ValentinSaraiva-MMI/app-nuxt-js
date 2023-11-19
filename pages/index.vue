@@ -19,22 +19,15 @@
 
   <Information :information="home.data.information" />
 
-  <Howto
-    v-bind="{
-      tag: 'How to work ',
-      title: 'Food Us An Important Part Of A Balanced Diet ',
-      items: home.data.how_to,
-    }"
-  />
+
 
 
   <div class="p-index__recipes">
-    <div class="p-index__recipe" v-for="recette in recettes">
+    <div v-for="recette in recettes">
       <RecipeCard
         v-bind="{
           id: recette.recipe_id,
           title: recette.recipe_name,
-          description: recette.recipe_description,
           image: recette.image_url,
         }"
       />
@@ -46,6 +39,15 @@
   <p class="title_base">services</p>
   <h3 class="title_h3">Why Choose our Favorite Food</h3>
   <MyServiceCard :services="home.data.services"/>
+
+
+    <Howto
+    v-bind="{
+      tag: 'How to work ',
+      title: 'Food Us An Important Part Of A Balanced Diet ',
+      items: home.data.how_to,
+    }"
+  />
   
 
   <p class="title_base">Testimonials</p>
@@ -68,7 +70,7 @@
   <!-- <MyCards></MyCards> -->
 </template>
 
-<style lang="scss" >
+<style lang="scss">
 
 .title_base {
   text-align: center;
