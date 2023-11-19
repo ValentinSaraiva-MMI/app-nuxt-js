@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <Button class="btn-moreproduct" hasIcon="icon"  variant="rounded"> See More Product  </Button>
+  <Button @click="moreCard()" class="btn-moreproduct" hasIcon="icon" variant="rounded" v-if="recettesEncore"> See More Product  </Button>
 
  
 
@@ -133,13 +133,22 @@ const { data: recettes } = await useAsyncData("recettes", async () => {
 
 const gridProduitsPopular = computed(() => {
   if (recettes.value){
-    return recettes.value.slice(4)
+    return recettes.value.slice(4, 4+3*gridPage.value)
   } else{
     return []
   }
 })
 
 // console.log(home.data);
+
+const gridPage = ref(1)
+
+const moreCard = () =>{
+  gridPage.value++
+}
+const recettesEncore = computed(() => {
+  return gridProduitsPopular.value.length < recettes.value.length-4
+})
 
 
 
