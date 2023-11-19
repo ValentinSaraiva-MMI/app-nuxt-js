@@ -47,6 +47,17 @@
   <h3 class="title_h3">Why Choose our Favorite Food</h3>
   <MyServiceCard :services="home.data.services"/>
   
+
+  <p class="title_base">Testimonials</p>
+  <h3 class="title_h3">Our happy client says</h3>
+  
+<AvisCard :prenom="home.data.prenom" 
+:job="home.data.job" 
+:commentaire="home.data.commentaire" 
+:imageavis="home.data.imageavis" 
+:photoProfil="home.data.photoprofil"  />
+
+
  
   <Newslater 
    :title="home.data.newsletter_title"
@@ -63,6 +74,7 @@
   text-align: center;
   color: $primary-color;
   text-transform: capitalize;
+  margin-top: 135px;
 }
 
 .title_h3{
@@ -113,7 +125,7 @@ useSeoMeta({
   ogImage: home.value.data.meta_image,
 });
 
-console.log(home.value.data.services);
+console.log(home.value.data);
 
 import MyCard from "@/components/MyCard.vue";
 

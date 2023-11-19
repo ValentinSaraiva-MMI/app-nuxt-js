@@ -37,7 +37,7 @@
       </div>
 
       <div class="c-hero__cards">
-        <p>test</p>
+        <p>testd</p>
       </div>
     </div>
   </section>

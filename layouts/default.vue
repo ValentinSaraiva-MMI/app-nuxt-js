@@ -1,14 +1,14 @@
 <template>
   
    
-      <Header />
+ <Myheader/>
  
    
   
       <NuxtPage />
  
  
-      <Footer />
+   <Myfooter/>
  
  
 </template>
