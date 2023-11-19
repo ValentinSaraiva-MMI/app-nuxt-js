@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <div @click="store.increment()">{{ store.cart }}</div>
+    <!-- <div @click="store.increment()">{{ store.cart }}</div> -->
 
     <div class="topnav">
       <div>
@@ -123,8 +123,8 @@
 <script setup>
 import { useGlobalStore } from "@/stores/global";
 
-const store = useGlobalStore();
-console.log(store);
+// const store = useGlobalStore();
+// console.log(store);
 
 
 const links = 

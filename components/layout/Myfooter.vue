@@ -4,11 +4,6 @@
 
 
 <FooterMenu v-for="menu in menus" v-bind="menu"/>
-
-
-
-
-
       
     </div>
 </template>
@@ -25,11 +20,9 @@
 </style>
 
 <script setup>
-import { useGlobalStore } from "@/stores/global";
 
-const store = useGlobalStore();
-console.log(store);
 
+ 
 
 const menus = 
   
