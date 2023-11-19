@@ -8,17 +8,16 @@ export default defineNuxtConfig({
 components:[ {
   path: '~/components',
   pathPrefix:false
-}],
+},
+]
+,
 
 modules: [
 '@nuxtjs/prismic',
-'@pinia/nuxt',
-'@nuxtjs/storybook'
+'@pinia/nuxt'
 ],
 
  prismic: { endpoint: process.env.NUXT_PRISMIC_ENDPOINT },
-
-
 
 
 css : [
@@ -29,9 +28,6 @@ runtimeConfig: {
   public: {
     apiUrl:''
   }
-
-
-
 },
 
 
@@ -40,9 +36,10 @@ runtimeConfig: {
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@/scss/foundations/_variables.scss";
+        additionalData: `
+        @import "@/scss/foundations/_variables.scss";
         @import "@/scss/foundations/_mixins.scss";
-        
+        @import "@/scss/foundations/_fonctions.scss";
         `
       }
     }

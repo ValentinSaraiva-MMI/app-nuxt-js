@@ -1,5 +1,8 @@
 @import 'fonctions';
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+
 $primary-color: #f48e28;
 $secondary-color: #f5ddc4;
 
@@ -18,7 +21,8 @@ $big-font-size: rem(36);
 $bigger-font-size: rem(48);
 $giant-font-size: rem(95);
 
-$primary-font-familly: Helvetica, Sans-Serif;
+
+$primary-font-familly: 'Montserrat', sans-serif;
 
 // style texte
 $font_weight-regular: 400;
