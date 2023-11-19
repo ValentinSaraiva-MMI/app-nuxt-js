@@ -3,10 +3,11 @@ const props = defineProps({
   href: String,
   size: String,
   variant: String,
+  hasIcon:String,
 });
 
-const className = computed(() => ({
-  " -withIcon": props.hasIcon,
+const className = computed(() => ({  
+  " -withIcon": props.hasIcon ==="icon",
   " -rounded": props.variant === "rounded",
   " -video": props.variant === "video",
   " -small": props.size === "small",
@@ -20,10 +21,17 @@ const isVideoButton = computed(() => {
   <a v-if="href" :href="href" class="c-button" :class="className">
     <PlayButton v-if="isVideoButton" />
     <slot></slot>
+
+
   </a>
   <button v-else class="c-button" :class="className">
     <slot></slot>
+<MyIcon color="megacouleur" direction="reverse" name="chevron" v-if="hasIcon ==='icon' "/>
+
   </button>
+
+
+ 
 </template>
 
 <style lang="scss">

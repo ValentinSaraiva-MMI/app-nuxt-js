@@ -21,9 +21,10 @@
 
 
 
-
+<p class="title_base">Product</p>
+  <h3 class="title_h3">Most Popular Items</h3>
   <div class="p-index__recipes">
-    <div v-for="recette in recettes">
+    <div v-for="recette in gridProduitsPopular">
       <RecipeCard
         v-bind="{
           id: recette.recipe_id,
@@ -33,6 +34,8 @@
       />
     </div>
   </div>
+
+  <Button class="btn-moreproduct" hasIcon="icon"  variant="rounded"> See More Product  </Button>
 
  
 
@@ -72,6 +75,13 @@
 
 <style lang="scss">
 
+.btn-moreproduct {
+margin-left: 50%;
+transform: translateX(-50%);
+margin-top: 50px;
+}
+
+
 .title_base {
   text-align: center;
   color: $primary-color;
@@ -90,9 +100,11 @@
 
 .p-index__recipes {
 
+  width: fit-content;
 display: grid;
 grid-template-columns: repeat(3,minmax(0,1fr));
 gap: 60px;
+margin: auto;
 
 }
 
@@ -104,20 +116,32 @@ const { data: home, error } = await useAsyncData("home", () =>
   client.getSingle("homepage")
 );
 
-const env = useRuntimeConfig();
-
-const { data: recettes } = await useAsyncData("recettes", async () => {
-  return $fetch(env.public.apiUrl + "/recipes");
-});
-
-// console.log(home.data);
-
 if (!home.value || error.value) {
   throw createError({
     statusCode: 404,
     statusMessage: "la page d\accueil est introuvable",
   });
 }
+
+const env = useRuntimeConfig();
+
+const { data: recettes } = await useAsyncData("recettes", async () => {
+  return $fetch(env.public.apiUrl + "/recipes");
+});
+
+
+
+const gridProduitsPopular = computed(() => {
+  if (recettes.value){
+    return recettes.value.slice(4)
+  } else{
+    return []
+  }
+})
+
+// console.log(home.data);
+
+
 
 useSeoMeta({
   title: home.value.data.meta_title,

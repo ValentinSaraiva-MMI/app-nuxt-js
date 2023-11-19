@@ -22,6 +22,8 @@ const className = computed(() => ({
   <button v-else class="button" :class="className"><slot></slot></button>
 </template>
 
+ 
+
 <style lang="scss" scoped>
 .button {
   background-color: $primary-color;

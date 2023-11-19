@@ -50,7 +50,17 @@
   &.-reverse {
     transform: rotate(180deg);
   }
+
+
+  &.-megacouleur {
+    background: $white;
+    color: $primary-color;
+  }
+
 }
+
+
+ 
 </style>
 
 <script setup>
@@ -111,8 +121,8 @@ const getIcon = computed(() => {
   case 'play':
     return IconPlay
   case 'fleche':
-    return IconFleche
-  case 'chevron':
+    return IconFleche 
+  case 'chevron': 
     return IconChevron
   case 'bag':
     return IconBag
@@ -137,6 +147,9 @@ const className = computed(() => ({
   '-secondary': props.color === 'secondary',
   '-dark': props.color === 'dark',
   '-white': props.color === 'white',
-  '-reverse': props.direction === 'reverse'
+  '-reverse': props.direction === 'reverse',
+  '-megacouleur': props.color === 'megacouleur'
+  
+  
 }))
 </script>
